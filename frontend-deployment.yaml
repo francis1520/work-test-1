@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fooderpfrontend
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: fooderpfrontend
+  template:
+    metadata:
+      labels:
+        app: fooderpfrontend
+    spec:
+      containers:
+        - name: fooderpfrontend
+          image: adarshmali/fooderpfrontend:DotIn
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fooderpfrontend
+spec:
+  type: NodePort
+  selector:
+    app: fooderpfrontend
+  ports:
+    - port: 80           
+      targetPort: 3000   
+      nodePort: 32014    
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: docker-cleanup
+spec:
+  schedule: "0 */6 * * *"  # Every 6 hours
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: cleanup
+              image: docker:DotIn
+              command:
+                [
+                  "sh",
+                  "-c",
+                  "docker container prune -f && docker image prune -f"
+                ]
+              volumeMounts:
+                - name: docker-sock
+                  mountPath: /var/run/docker.sock
+          volumes:
+            - name: docker-sock
+              hostPath:
+                path: /var/run/docker.sock

@@ -1,0 +1,192 @@
+.order-discount-row {
+    position: relative;
+    table-layout: fixed;
+    min-width: 100px;
+    position: relative;
+
+    .parent {
+        display: flex;
+        min-width: 100px;
+    }
+
+    .child {
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+
+    .child:first-child {
+        flex-basis: 30%;
+    }
+
+    .child:last-child {
+        flex-basis: 70%;
+    }
+
+    .bottom-div {
+        samp {
+            padding-top: 6px;
+            padding-left: 4px;
+            font-size: 130%;
+        }
+
+        span {
+            flex-grow: 3;
+            padding-top: 6px;
+            margin-left: 8px;
+            flex-basis: 50px
+        }
+    }
+
+}
+
+
+
+
+
+
+.custom-table .hide-border td {
+    border-left: none !important;
+    border-right: none !important;
+}
+
+.custom-table .hide-border td:last-child {
+    border-right: none !important;
+}
+
+.custom-table .hide-border td:first-child {
+    border-left: none !important;
+}
+
+
+
+.column-Style {
+    padding: 2px;
+    border: 2px solid #ddd;
+}
+
+
+
+
+@media (max-width: 1400px) {
+    #group-span {
+        font-size: 14px !important;
+        padding: 5px 8px !important;
+        margin-right: 20px !important;
+    }
+
+    #subgroup-span {
+        font-size: 12px !important;
+        padding: 3px 8px !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    #group-span {
+        font-size: 12px !important;
+        padding: 4px 6px !important;
+        margin-right: 15px !important;
+    }
+
+    #subgroup-span {
+        font-size: 10px !important;
+        padding: 2px 6px !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.checkbox-wrapper-31:hover .check {
+    stroke-dashoffset: 0;
+}
+
+.checkbox-wrapper-31 {
+    position: relative;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    
+}
+
+.checkbox-wrapper-31 .background {
+    fill: #ccc;
+    transition: ease all 0.6s;
+    -webkit-transition: ease all 0.6s;
+}
+
+.checkbox-wrapper-31 .stroke {
+    fill: none;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+    stroke-dashoffset: 100;
+    stroke-dasharray: 100;
+    transition: ease all 0.6s;
+    -webkit-transition: ease all 0.6s;
+}
+
+.checkbox-wrapper-31 .check {
+    fill: none;
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+    stroke-dashoffset: 22;
+    stroke-dasharray: 22;
+    transition: ease all 0.6s;
+    -webkit-transition: ease all 0.6s;
+}
+
+.checkbox-wrapper-31 input[type="checkbox"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    opacity: 0;
+    -appearance: none;
+}
+
+.checkbox-wrapper-31 input[type="checkbox"]:hover {
+    cursor: pointer;
+}
+
+.checkbox-wrapper-31 input[type="checkbox"]:checked+svg .background {
+    fill: #6cbe45;
+}
+
+.checkbox-wrapper-31 input[type="checkbox"]:checked+svg .stroke {
+    stroke-dashoffset: 0;
+}
+
+.checkbox-wrapper-31 input[type="checkbox"]:checked+svg .check {
+    stroke-dashoffset: 0;
+}
