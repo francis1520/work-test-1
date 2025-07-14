@@ -23,9 +23,9 @@ if (hostname.includes("43.225.53.91")) {
 } else if (hostname.includes("10.4.5.68")) {
     SERVER_HOST_PATH = "http://10.4.5.68:8000";
     ERP_LINK_1 = "http://10.4.5.68:3000";
-} else if (hostname.includes("localhost")) {
+} else if (hostname.includes("20.96.169.93")) {
     SERVER_HOST_PATH = "http://192.168.1.114:8000";
-    ERP_LINK_1 = "http://192.168.1.34:3000";
+    ERP_LINK_1 = "http://20.96.169.93:3000";
 }
 
 // Export values
