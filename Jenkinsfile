@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = "fooderpfrontend"
-        IMAGE_TAG = "DotIn"
+        IMAGE_TAG = "01"
         DOCKER_USERNAME = 'francisreddy'
         DOCKER_PASSWORD = 'Nani@1997'
         REGISTRY = "${DOCKER_USERNAME}/${IMAGE_NAME}"
