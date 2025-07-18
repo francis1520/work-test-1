@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fooderpfrontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fooderpfrontend
+  template:
+    metadata:
+      labels:
+        app: fooderpfrontend
+    spec:
+      containers:
+      - name: fooderpfrontend
+        image: francisreddy/fooderpfrontend:DotIn
+        ports:
+        - containerPort: 3000
